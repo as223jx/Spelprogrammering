@@ -1,0 +1,14 @@
+package view;
+import static java.lang.System.out;
+
+public class View {
+	private Camera camera;
+	
+	public View(){
+		camera = new Camera();
+	}
+	
+	public void viewVisualCoordinates(int x, int y){
+		out.println(camera.getVisualX() + camera.getVisualY());
+	}
+}

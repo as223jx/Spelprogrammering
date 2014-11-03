@@ -1,0 +1,14 @@
+import view.View;
+import static java.lang.System.out;
+
+public class ChessGame {
+	private View view;
+	ChessGame(){
+		view = new View();
+		view.viewVisualCoordinates(0,0);
+	}
+	
+	public static void main(String[] args) throws Exception {
+	
+	}
+}

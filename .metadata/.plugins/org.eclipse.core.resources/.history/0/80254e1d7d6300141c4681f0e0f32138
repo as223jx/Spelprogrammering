@@ -1,0 +1,9 @@
+import view.View;
+
+public class ChessGame {
+	private View view;
+	ChessGame(){
+		view = new View();
+		view.viewVisualCoordinates(0,0);
+	}
+}

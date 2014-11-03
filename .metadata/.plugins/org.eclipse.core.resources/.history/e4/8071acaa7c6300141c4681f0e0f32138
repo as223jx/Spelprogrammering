@@ -1,0 +1,8 @@
+import view.View;
+
+public class ChessGame {
+	private View view;
+	ChessGame(){
+		view = new View();
+	}
+}

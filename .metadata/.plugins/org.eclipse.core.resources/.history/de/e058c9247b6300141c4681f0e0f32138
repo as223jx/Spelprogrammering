@@ -1,0 +1,29 @@
+package view;
+
+public class Camera {
+	private int levelWidth;
+	private int levelHeight;
+	private int visualX;
+	private int visualY;
+	private static int scale = 64;
+	private static int borderSize = 64;
+	private static int width = 800;
+	private static int height = 600;
+	
+	Camera(int levelWidth, int levelHeight){
+		this.levelWidth = levelWidth;
+		this.levelHeight = levelHeight;
+	}
+	public void toVCoordinates(int x, int y){
+		visualX = x*scale;
+		visualY = y*scale;
+	}
+	
+	public int getVisualX(){
+		return visualX;
+	}
+	
+	public int getVisualY(){
+		return visualY;
+	}
+}

@@ -1,0 +1,18 @@
+package view;
+import java.io.PrintStream;
+
+public class View {
+	private Camera camera;
+	
+	public View(){
+		camera = new Camera();
+	}
+	
+	public void viewVisualCoordinates(int x, int y){
+		camera.toVCoordinates(x, y);
+		PrintStream out = System.out;
+		out.println( "hello" );
+		out.println(camera.getVisualX());
+		out.println(camera.getVisualY());
+	}
+}
