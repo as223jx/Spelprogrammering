@@ -1,0 +1,21 @@
+package view;
+
+public class View {
+	private Camera camera;
+	
+	public View(){
+		camera = new Camera();
+	}
+	
+	public void viewWhiteSideVisualCoordinates(int x, int y, int width, int height){
+		camera.toWhiteSideVisualCoordinates(x, y);
+		System.out.println(camera.getVisualX());
+		System.out.println(camera.getVisualY());
+	}
+	
+	public void viewBlackSideVisualCoordinates(int x, int y){
+		camera.toBlackSideVisualCoordinares(x, y);
+		System.out.println(camera.getVisualX());
+		System.out.println(camera.getVisualY());
+	}
+}

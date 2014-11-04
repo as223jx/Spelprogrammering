@@ -1,0 +1,30 @@
+package view;
+
+public class Camera {
+	private int visualX;
+	private int visualY;
+	private static int scale = 64;
+	private static int borderSize = 64;
+	private static int blackSideStart = 512;
+	
+	Camera(){
+	}
+	
+	public void toWhiteSideVisualCoordinates(int x, int y){
+		visualX = x*scale+borderSize;
+		visualY = y*scale+borderSize;
+	}
+	
+	public void toBlackSideVisualCoordinares(int x, int y){
+		visualX = x*(-scale)+blackSideStart;
+		visualY = y*(-scale)+blackSideStart;
+	}
+	
+	public int getVisualX(){
+		return visualX;
+	}
+	
+	public int getVisualY(){
+		return visualY;
+	}
+}

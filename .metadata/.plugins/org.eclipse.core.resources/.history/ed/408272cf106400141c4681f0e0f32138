@@ -1,0 +1,13 @@
+import view.View;
+
+public class ChessGame {
+	private static View view;
+	private static int width = 320;
+	private static int height = 200;
+	
+	public static void main(String[] args) throws Exception {
+		view = new View(width, height);
+		view.viewWhiteSideVisualCoordinates(0,0, width, height);
+		view.viewBlackSideVisualCoordinates(0,0);
+	}
+}

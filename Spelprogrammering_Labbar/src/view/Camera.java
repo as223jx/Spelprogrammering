@@ -1,16 +1,49 @@
 package view;
 
 public class Camera {
+	private int width;
+	private int height;
 	private int visualX;
 	private int visualY;
-	private static int scale = 64;
-	private static int borderSize = 64;
+	private static int lvlWidth = 8;
+	private static int lvlHeight = 8;
+	private static int scale;
+	private int borderSize = 64;
+	private int blackSideStart;
 	
 	Camera(){
 	}
-	public void toVCoordinates(int x, int y){
+	
+	public void setScale(int width, int height){
+		this.width = width;
+		this.height = height;
+		borderSize = height/10;
+		if(width<height)
+		{	
+			borderSize = width/10;
+		}
+
+		int scaleX = (width-borderSize*2) / lvlWidth;
+		int scaleY = (height-borderSize*2) / lvlHeight;
+		
+		scale = scaleX;
+		if (scaleY < scaleX) {
+			scale = scaleY;
+		}
+		
+		borderSize = scale;
+	}
+	
+	public void toWhiteSideVisualCoordinates(int x, int y){
+		System.out.println("Scale: " + scale);
 		visualX = x*scale+borderSize;
 		visualY = y*scale+borderSize;
+	}
+	
+	public void toBlackSideVisualCoordinares(int x, int y){
+		blackSideStart = scale*7;
+		visualX = x*(-scale)+blackSideStart+borderSize;
+		visualY = y*(-scale)+blackSideStart+borderSize;
 	}
 	
 	public int getVisualX(){

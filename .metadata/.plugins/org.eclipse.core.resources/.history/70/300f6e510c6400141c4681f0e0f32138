@@ -1,0 +1,11 @@
+import view.View;
+
+public class ChessGame {
+	private static View view;
+	
+	public static void main(String[] args) throws Exception {
+		view = new View();
+		view.viewWhiteSideVisualCoordinates(1,7);
+		view.viewBlackSideVisualCoordinates(6,0);
+	}
+}

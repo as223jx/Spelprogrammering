@@ -1,0 +1,50 @@
+package view;
+
+public class Camera {
+	private int width;
+	private int height;
+	private int visualX;
+	private int visualY;
+	private static int lvlWidth = 8;
+	private static int lvlHeight = 8;
+	private static int scale;
+	private int borderSize = 64;
+	private static int blackSideStart = scale*7;
+	
+	Camera(){
+	}
+	
+	public void setScale(int width, int height){
+		this.width = width;
+		this.height = height;
+		
+		int scaleX = (width-borderSize*2) / lvlWidth;
+		int scaleY = (height-borderSize*2) / lvlHeight;
+		
+		scale = scaleX;
+		if (scaleY < scaleX) {
+			scale = scaleY;
+		}
+		
+		borderSize = scale;
+	}
+	
+	public void toWhiteSideVisualCoordinates(int x, int y){
+		System.out.println("Scale: " + scale);
+		visualX = x*scale+borderSize;
+		visualY = y*scale+borderSize;
+	}
+	
+	public void toBlackSideVisualCoordinares(int x, int y){
+		visualX = x*(-scale)+borderSize;
+		visualY = y*(-scale)+borderSize;
+	}
+	
+	public int getVisualX(){
+		return visualX;
+	}
+	
+	public int getVisualY(){
+		return visualY;
+	}
+}
