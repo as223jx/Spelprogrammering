@@ -39,7 +39,6 @@ public class Camera {
 		visualY = y*scale+borderSize;
 	}
 	
-	// Om spelaren spelar med svarta pjäser så multiplicerar jag skalan med 7 för att få första svarta pjäsens plats.
 	public void toBlackSideVisualCoordinares(int x, int y){
 		blackSideStart = scale*7;
 		visualX = x*(-scale)+blackSideStart+borderSize;

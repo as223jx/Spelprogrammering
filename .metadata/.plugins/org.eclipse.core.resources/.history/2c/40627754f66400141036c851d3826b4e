@@ -7,7 +7,7 @@ public class ChessGame {
 	
 	public static void main(String[] args) throws Exception {
 		view = new View(width, height);
-		view.viewWhiteSideVisualCoordinates(0,0);
+		view.viewWhiteSideVisualCoordinates(0,0, width, height);
 		view.viewBlackSideVisualCoordinates(0,0);
 	}
 }

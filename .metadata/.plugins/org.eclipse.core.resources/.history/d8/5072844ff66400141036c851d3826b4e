@@ -8,7 +8,7 @@ public class View {
 		camera.setScale(width, height);
 	}
 	
-	public void viewWhiteSideVisualCoordinates(int x, int y){
+	public void viewWhiteSideVisualCoordinates(int x, int y, int width, int height){
 		camera.toWhiteSideVisualCoordinates(x, y);
 		System.out.println(camera.getVisualX());
 		System.out.println(camera.getVisualY());
