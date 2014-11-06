@@ -1,0 +1,10 @@
+package view;
+import model.BallSimulation;
+
+public class BallView {
+	private Camera camera;
+	
+	public BallView(){
+		camera = new Camera();
+	}
+}

@@ -1,0 +1,12 @@
+package view;
+
+public class Camera {
+	private float viewX;
+	private float viewY;
+	private float logicX;
+	private float logicY;
+	
+	public Camera(){
+		
+	}
+}

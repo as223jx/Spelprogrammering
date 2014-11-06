@@ -1,0 +1,9 @@
+package view;
+
+public class BallView {
+	private Camera camera;
+	
+	public BallView(){
+		camera = new Camera();
+	}
+}

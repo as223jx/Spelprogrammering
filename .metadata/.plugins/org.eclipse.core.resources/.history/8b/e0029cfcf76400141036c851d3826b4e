@@ -1,0 +1,11 @@
+package model;
+
+public class Ball {
+	private float position;
+	private float speed;
+	private float radius;
+	
+	Ball(){
+		
+	}
+}

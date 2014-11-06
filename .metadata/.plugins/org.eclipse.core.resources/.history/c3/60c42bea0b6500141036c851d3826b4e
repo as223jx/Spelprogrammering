@@ -1,0 +1,13 @@
+package controller;
+import model.BallSimulation;
+import view.BallView;
+
+public class MasterController {
+	private static BallSimulation ballSimulation;
+	private static BallView ballView;
+	
+	public static void main(String[] args) throws Exception {
+		ballSimulation = new BallSimulation();
+		ballView = new BallView();
+	}
+}

@@ -1,0 +1,52 @@
+package controller;
+import MinimalApplication;
+
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.media.opengl.GLCapabilities;
+import javax.media.opengl.GLEventListener;
+import javax.media.opengl.GLProfile;
+import javax.media.opengl.awt.GLCanvas;
+
+import com.jogamp.opengl.util.FPSAnimator;
+
+import model.BallSimulation;
+import view.BallView;
+
+public class MasterController implements GLEventListener {
+	private static BallSimulation ballSimulation;
+	private static BallView ballView;
+	static int width = 800;
+	static int height = 600;
+	
+	public MasterController(GLCanvas glc) throws Exception{
+		ballSimulation = new BallSimulation();
+		ballView = new BallView();
+	}
+	
+	public static void main(String[] args) throws Exception {
+
+		
+        GLProfile glp = GLProfile.getDefault();
+        GLCapabilities caps = new GLCapabilities(glp);
+        GLCanvas canvas = new GLCanvas(caps);
+        
+        Frame frame = new Frame("Minimal MVC");
+        frame.setSize(MasterController.width, MasterController.height);
+        frame.add(canvas);
+        frame.setVisible(true);
+
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+        canvas.addGLEventListener(new MasterController(canvas));
+
+        FPSAnimator animator = new FPSAnimator(canvas, 60);
+        animator.start();
+	}
+}

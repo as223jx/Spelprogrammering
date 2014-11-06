@@ -1,0 +1,13 @@
+package controller;
+import model.BallSimulation;
+import view.BallView;
+
+public class MasterController {
+	private BallSimulation ballSimulation;
+	private BallView ballView;
+	
+	MasterController(){
+		ballSimulation = new BallSimulation();
+		ballView = new BallView();
+	}
+}
