@@ -5,14 +5,15 @@ import view.Camera;
 public class Ball {
 	public float centerX = 4f;
 	public float centerY = 4f;
-	private float speedX = 1f;
+	private float speedX = 5.0f;
 	private float speedY = 10.0f;
-	public float diameter = 0.5f;
+	public float diameter = 1.0f;
 	
 	public Ball(){
 	}
 	
 	public boolean update(float timeElapsedSeconds) {
+		
 		centerX = centerX + speedX * timeElapsedSeconds;
 		
 		if (centerX + diameter/2 > Camera.lvlWidth) {

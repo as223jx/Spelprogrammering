@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -10,10 +11,10 @@ import javax.media.opengl.GLEventListener;
 import javax.media.opengl.GLProfile;
 import javax.media.opengl.awt.GLCanvas;
 
-import com.jogamp.opengl.util.FPSAnimator;
-
 import model.BallSimulation;
 import view.BallView;
+
+import com.jogamp.opengl.util.FPSAnimator;
 
 public class MasterController implements GLEventListener {
 	private static BallSimulation ballSimulation;
@@ -30,7 +31,7 @@ public class MasterController implements GLEventListener {
         GLProfile profile = GLProfile.getDefault();
         GLCapabilities capabilities = new GLCapabilities(profile);
         GLCanvas canvas = new GLCanvas(capabilities);
-        
+
         Frame frame = new Frame("Ball");
         frame.setSize(BallView.width, BallView.height);
         frame.add(canvas);
@@ -43,6 +44,7 @@ public class MasterController implements GLEventListener {
         });
 
         canvas.addGLEventListener(new MasterController());
+
 
         FPSAnimator animator = new FPSAnimator(canvas, 60);
         animator.start();
@@ -60,10 +62,8 @@ public class MasterController implements GLEventListener {
     }
     
 	public void update(float timeElapsed, GLAutoDrawable drawable) {
-		//Change model state
 		ballSimulation.update(timeElapsed);
-		
-		//Generate output
+
 		ballView.render(drawable);
 	}
 
@@ -78,7 +78,7 @@ public class MasterController implements GLEventListener {
 
     @Override
     public void reshape(GLAutoDrawable drawable, int x, int y, int w, int h) {
-    	//view.reshape(drawable, x, y, w, h);
+    	ballView.reshape(drawable, x, y, w, h);
     	previousTime = System.currentTimeMillis();
     }
     
